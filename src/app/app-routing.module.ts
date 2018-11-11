@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+import { VideoComponent } from "./media/video/video.component";
+
+const routes: Routes = [
+  { path : "", component : VideoComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
