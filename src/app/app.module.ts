@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 //Service
-import { UserMediaService } from "./media/service/user-media.service";
 //Component
 import { AppComponent } from './app.component';
 import { VideoComponent } from './media/video/video.component';
@@ -18,7 +17,6 @@ import { VideoComponent } from './media/video/video.component';
     AppRoutingModule
   ],
   providers: [
-    //UserMediaService
   ],
   bootstrap: [AppComponent]
 })
