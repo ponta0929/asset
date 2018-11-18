@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { UserMediaService } from "../service/user-media.service";
 
 @Component({
   selector: 'app-video',
@@ -6,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./video.component.css']
 })
 export class VideoComponent implements OnInit {
+  videoSrc;
 
-  constructor() { }
+  constructor(
+    private userMediaService : UserMediaService
+  ) { }
 
   ngOnInit() {
+    console.log("on Init VideoComponent");
+    this.userMediaService.getUserStream().subscribe(
+      (userMedia : MediaStream) => {
+        console.log("stream into video source");
+        console.log(userMedia);
+        this.videoSrc = userMedia;
+      }
+    )
   }
 
 }
